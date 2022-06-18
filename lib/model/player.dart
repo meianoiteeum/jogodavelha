@@ -2,10 +2,12 @@ class Player {
   late String _name;
   late String _symbol;
   late int _countMoves;
+  late int _score = 0;
 
   Player({required name, required symbol}){
     _name = name;
     _symbol = symbol;
+    _countMoves = 0;
   }
 
   getName(){
@@ -24,15 +26,24 @@ class Player {
     _symbol = symbol;
   }
 
-  getCountMoves(){
-    return _countMoves;
-  }
+  getCountMoves() => _countMoves;
 
   setCountMoves(int countMoves){
     _countMoves = countMoves;
   }
 
+  getScore() => _score.toString();
+
   incrementMoves(){
     _countMoves++;
+  }
+
+  incrementScore(){
+    _score++;
+  }
+
+  @override
+  String toString(){
+    return _name;
   }
 }
